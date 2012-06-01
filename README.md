@@ -10,4 +10,5 @@ Boilerplate Jump-Starter Code-base Bootstrap
 - Setup a lesss watcher/auto-compiler
 - Add JSDoc parser
 - Add JSDoc comments to all code
+- Compile handlebars templates in build
 - Possibly add Restify instead/in-addition to Express
