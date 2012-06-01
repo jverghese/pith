@@ -1,0 +1,17 @@
+{
+  "author": "Ed Rooth <ed.rooth@gmail.com> (www.edrooth.com)",
+  "name": "pith",
+  "description": "Full JavaScript Stack Boilerplate",
+  "version": "0.0.0",
+  "homepage": "http://pith.github.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sym3tri/pith.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
