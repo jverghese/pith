@@ -8,7 +8,12 @@
     "type": "git",
     "url": "git://github.com/sym3tri/pith.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "~2.5.9",
+    "hbs": "~1.0.3",
+    "less": "~1.3.0",
+    "request": "~2.9.202"
+  },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
