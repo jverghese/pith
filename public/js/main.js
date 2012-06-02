@@ -7,6 +7,12 @@ require.config({
     backbone: '../backbone/backbone',
     handlebars: '../handlebars/handlebars'
     //bootstrap: '../bootstrap/js/bootstrap'
+  },
+  shim: {
+    backbone: {
+      deps: ['underscore', 'jquery'],
+      exports: 'Backbone'
+    }
   }
 });
 
