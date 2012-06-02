@@ -1,8 +1,12 @@
 (function () {
   'use strict';
 
-  exports.get = function(req, res){
-    res.render('home', { title: 'Home' });
+  module.exports = function (app) {
+
+    app.get('/', function(req, res) {
+      res.render('home', { title: 'Home' });
+    });
+
   };
 
 }());

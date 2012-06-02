@@ -1,3 +1,10 @@
-module.exports = {
-  home: require('./home')
-};
+(function () {
+  'use strict';
+
+  module.exports = function (app) {
+    return {
+      home: require('./home')(app)
+    };
+  };
+
+}());
