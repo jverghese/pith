@@ -5,7 +5,11 @@ define([
   'handlebars',
   'models/hello',
   'collections/hellos',
-  'text!templates/home.hbs'
+  'text!templates/home.hbs',
+
+  // bootstrap plugins must be required, but are just appended to jquery as
+  // plugins so the instances need not be referneced.
+  'bootstrapAlert'
 ],
 function($, _, Backbone, Handlebars,
   Hello, Hellos, homeTpl) {
@@ -18,11 +22,12 @@ function($, _, Backbone, Handlebars,
     template: Handlebars.compile(homeTpl),
 
     events: {
-      'click .add-new': 'onAddNewClick'
+      'click .add-new': 'onAddNewClick',
+      'click .bootstrap-plugin-test-alert': 'onAlertCloseClick'
     },
 
     initialize: function () {
-      // Bind all non-event halder methods to this.
+      // Bind all non-event handler methods to 'this'.
       _.bindAll(this, 'render');
 
       this.collection.on('add', this.render);
@@ -41,6 +46,10 @@ function($, _, Backbone, Handlebars,
 
 
     // EVENT HANDLERS
+
+    onAlertCloseClick: function () {
+      this.$('.bootstrap-plugin-test-alert').alert('close');
+    },
 
     onAddNewClick: function () {
       this.collection.add(new Hello());
