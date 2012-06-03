@@ -2,9 +2,15 @@
 module.exports = function(grunt) {
   'use strict';
 
-  // Load up task plugins
+  // Variables
+  var handlebarsPath = './node_modules/handlebars/bin/handlebars';
+
+  // Load up npm task plugins
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-requirejs');
+  grunt.loadNpmTasks('grunt-exec');
+  // Load up local tasks
+  //grunt.loadTasks('grunt/tasks');
 
   // Project configuration.
   grunt.initConfig({
@@ -37,16 +43,13 @@ module.exports = function(grunt) {
       name: 'main',
       mainConfigFile: 'public/js/main.js',
       out: 'public/dist/main.built.js'
-
-      //dir: 'public/dist',
-      //appDir: 'public/js',
-      //,
-      //pragmas: {
-          //doExclude: true
-      //},
-      //skipModuleInsertion: false,
-      //optimizeAllPluginResources: true,
-      //findNestedDependencies: true
+    },
+    exec: {
+      compileTemplates: {
+        command: handlebarsPath +
+          ' public/templates --output public/dist/templates.js',
+        stdout: true
+      }
     },
 
 
@@ -124,5 +127,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('css', 'recess');
   grunt.registerTask('compile', 'requirejs');
-  grunt.registerTask('default', 'lint css compile');
+  grunt.registerTask('default', 'lint css templates compile');
+  grunt.registerTask('templates', 'exec:compileTemplates');
 };

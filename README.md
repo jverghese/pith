@@ -23,10 +23,11 @@ pith = nodjs + express + requirejs + backbone + handlebars + twitter bootstrap +
 `npm start`
 
 #Build Commands
-- `grunt` Do a full build, which will do everything below
-- `grunt css` Compile less into css
-- `grunt lint` Lint all JavaScript files
-- `grunt compile` RequireJS optimize and compile all client-side JavaScript
+- `grunt` Do a full build, which will do everything below.
+- `grunt css` Compile less into css.
+- `grunt lint` Lint all JavaScript files.
+- `grunt templates` Precompile all client-side Handlebars templates.
+- `grunt compile` RequireJS optimize and compile all client-side JavaScript.
 
 #TODO
 - Optimize jshint options
