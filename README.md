@@ -13,10 +13,10 @@ Boilerplate Jump-Starter Code-base Bootstrap
 `npm start`
 
 #Build Commands
-- Do a full build, which will do everything below `grunt`
-- Compile less into css `grunt css`
-- Lint all JavaScript files `grunt lint`
-
+- `grunt` Do a full build, which will do everything below
+- `grunt css` Compile less into css
+- `grunt lint` Lint all JavaScript files
+- `grunt compile` RequireJS optimize and compile all client-side JavaScript
 
 #TODO
 - Add grunt for build process

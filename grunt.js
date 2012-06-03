@@ -2,8 +2,9 @@
 module.exports = function(grunt) {
   'use strict';
 
+  // Load up task plugins
   grunt.loadNpmTasks('grunt-recess');
-  var recessPath = './node_modules/recess/bin/recess';
+  grunt.loadNpmTasks('grunt-requirejs');
 
   // Project configuration.
   grunt.initConfig({
@@ -20,7 +21,7 @@ module.exports = function(grunt) {
       grunt: 'grunt.js',
       server: ['lib/**/*.js', 'app/**/*.js'],
       specs: 'spec/**/*.js',
-      client: 'public/**/*.js'
+      client: 'public/js/**/*.js'
     },
     recess: {
       dist: {
@@ -31,6 +32,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    requirejs: {
+      baseUrl: 'public/js',
+      name: 'main',
+      mainConfigFile: 'public/js/main.js',
+      out: 'public/dist/main.built.js'
+
+      //dir: 'public/dist',
+      //appDir: 'public/js',
+      //,
+      //pragmas: {
+          //doExclude: true
+      //},
+      //skipModuleInsertion: false,
+      //optimizeAllPluginResources: true,
+      //findNestedDependencies: true
+    },
+
 
     //concat: {
       //dist: {
@@ -104,9 +122,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  //grunt.registerTask('default', 'lint qunit concat min');
-
-  grunt.registerTask('default', 'lint recess');
-
   grunt.registerTask('css', 'recess');
+  grunt.registerTask('compile', 'requirejs');
+  grunt.registerTask('default', 'lint css compile');
 };
