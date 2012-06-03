@@ -2,6 +2,9 @@
 module.exports = function(grunt) {
   'use strict';
 
+  grunt.loadNpmTasks('grunt-recess');
+  var recessPath = './node_modules/recess/bin/recess';
+
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
@@ -9,7 +12,8 @@ module.exports = function(grunt) {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+        '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
+        '<%= pkg.author.name %>;' +
         ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
     },
     lint: {
@@ -18,7 +22,16 @@ module.exports = function(grunt) {
       specs: 'spec/**/*.js',
       client: 'public/**/*.js'
     },
-    //qunit: {},
+    recess: {
+      dist: {
+        src: ['public/less/base.less'],
+        dest: 'public/dist/style.css',
+        options: {
+          compile: true
+        }
+      }
+    },
+
     //concat: {
       //dist: {
         //src: ['<banner:meta.banner>',
@@ -50,7 +63,9 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         strict: true,
-        es5: true
+        es5: true,
+        trailing: true,
+        maxlen: 80
       },
       globals: {
         define: true,
@@ -91,5 +106,7 @@ module.exports = function(grunt) {
   // Default task.
   //grunt.registerTask('default', 'lint qunit concat min');
 
-  grunt.registerTask('default', 'lint');
+  grunt.registerTask('default', 'lint recess');
+
+  grunt.registerTask('css', 'recess');
 };

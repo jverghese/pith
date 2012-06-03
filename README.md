@@ -12,6 +12,12 @@ Boilerplate Jump-Starter Code-base Bootstrap
 #Run
 `npm start`
 
+#Build Commands
+- Do a full build, which will do everything below `grunt`
+- Compile less into css `grunt css`
+- Lint all JavaScript files `grunt lint`
+
+
 #TODO
 - Add grunt for build process
 - Add jshint options
