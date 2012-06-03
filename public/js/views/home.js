@@ -31,7 +31,8 @@ function($, _, Backbone, Handlebars,
 
     render: function () {
       this.$el.html(this.template({
-        title: 'Home Title',
+        // this should work if underscore.string was setup properly
+        title: _.trim('Home Title    '),
         hellos: this.collection.toJSON()
       }));
 

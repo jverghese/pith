@@ -3,19 +3,19 @@ require.config({
     templates: '../templates',
     text: '../require/text',
     jquery: '../jquery/jquery-1.7.2.min',
-    underscore: '../underscore/underscore',
+    handlebars: 'lib/handlebars',
     backbone: '../backbone/backbone',
-    handlebars: 'lib/handlebars'
+    underscoreBase: '../underscore/underscore',
+    underscore: 'lib/underscore'
     //bootstrap: '../bootstrap/js/bootstrap'
   },
   // Load modules that don't natively support AMD.
   shim: {
-    // No dependencies but exports '_' for others to use.
-    'underscore': {
+    'underscoreBase': {
       deps: [],
       exports: '_'
     },
-    backbone: {
+    'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     }
