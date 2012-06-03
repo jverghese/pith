@@ -1,7 +1,16 @@
 pith
 ====
 
-Boilerplate Jump-Starter Code-base Bootstrap
+pith = nodjs + express + requirejs + backbone + handlebars + twitter bootstrap + grunt
+
+- Super light-weight
+- Completely modularized
+- Out of the box build process that lints, compiles, minifies etc.
+- Easy to add to
+- Easy to remove from
+
+#Dependencies
+- nodejs & npm
 
 #Install
 - fork this repo
