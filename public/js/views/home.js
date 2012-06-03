@@ -5,7 +5,7 @@ define([
   'handlebars',
   'models/hello',
   'collections/hellos',
-  'text!templates/home.hbs',
+  'text!templates/home.handlebars',
 
   // bootstrap plugins must be required, but are just appended to jquery as
   // plugins so the instances need not be referneced.
