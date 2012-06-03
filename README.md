@@ -13,9 +13,9 @@ Boilerplate Jump-Starter Code-base Bootstrap
 
 #TODO
 - Add grunt for build process
+- Add jshint options
 - Add Jasmine for testing
-- Include Twitter Bootstrap original less files
-- Setup a lesss watcher/auto-compiler
+- Setup a lesss watcher/auto-compiler (hopefully recess will just work)
 - Add JSDoc parser
 - Add JSDoc comments to all code
 - Compile handlebars templates in build
