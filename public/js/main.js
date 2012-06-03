@@ -8,7 +8,13 @@ require.config({
     handlebars: '../handlebars/handlebars'
     //bootstrap: '../bootstrap/js/bootstrap'
   },
+  // Load modules that don't natively support AMD.
   shim: {
+    // No dependencies but exports '_' for others to use.
+    'underscore': {
+      deps: [],
+      exports: '_'
+    },
     backbone: {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'

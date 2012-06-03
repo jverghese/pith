@@ -1,12 +1,10 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
   'views/home',
   'models/hello',
   'collections/hellos'
 ],
-function($, _, Backbone, HomeView, Hello, Hellos) {
+function(Backbone, HomeView, Hello, Hellos) {
   'use strict';
 
   var AppRouter = Backbone.Router.extend({
@@ -18,7 +16,12 @@ function($, _, Backbone, HomeView, Hello, Hellos) {
     },
 
     initialize: function (options) {
-      this.homeView = new HomeView();
+
+      var testCollection = new Hellos();
+      testCollection.add();
+      testCollection.add({'text': 'there!'});
+
+      this.homeView = new HomeView({ collection: testCollection });
     },
 
     home: function () {

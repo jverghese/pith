@@ -7,8 +7,7 @@ define([
   'collections/hellos',
   'text!templates/home.hbs'
 ],
-function($, _, Backbone, Handlebars,
-  Hello, Hellos, homeTpl) {
+function($, _, Backbone, Handlebars, Hello, Hellos, homeTpl) {
   'use strict';
 
   var HomeView = Backbone.View.extend({
@@ -22,16 +21,16 @@ function($, _, Backbone, Handlebars,
     },
 
     initialize: function () {
-      _.bindAll(this,
-        'onAddNewClick',
-        'render');
+      // Bind all non-event halder methods to this.
+      _.bindAll(this, 'render');
 
-      //this.collection.on('add', this...);
+      this.collection.on('add', this.render);
       this.collection.on('reset', this.render);
     },
 
     render: function () {
       this.$el.html(this.template({
+        title: 'Home Title',
         hellos: this.collection.toJSON()
       }));
 
