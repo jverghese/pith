@@ -23,5 +23,6 @@
     "node": "*"
   },
   "scripts": {
+    "start": "node app/server.js"
   }
 }
