@@ -11,7 +11,10 @@
     <div class="span6">
       <ul>
       {{#each hellos}}
-        <li>{{this.text}}</li>
+        <li>
+          {{this.text}}
+          {{#ifequal this.text "hello"}}(default){{/ifequal}}
+        </li>
       {{/each}}
       </ul>
     </div>

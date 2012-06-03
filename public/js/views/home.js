@@ -7,7 +7,8 @@ define([
   'collections/hellos',
   'text!templates/home.hbs'
 ],
-function($, _, Backbone, Handlebars, Hello, Hellos, homeTpl) {
+function($, _, Backbone, Handlebars,
+  Hello, Hellos, homeTpl) {
   'use strict';
 
   var HomeView = Backbone.View.extend({

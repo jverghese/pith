@@ -5,7 +5,7 @@ require.config({
     jquery: '../jquery/jquery-1.7.2.min',
     underscore: '../underscore/underscore',
     backbone: '../backbone/backbone',
-    handlebars: '../handlebars/handlebars'
+    handlebars: 'lib/handlebars'
     //bootstrap: '../bootstrap/js/bootstrap'
   },
   // Load modules that don't natively support AMD.
@@ -22,8 +22,7 @@ require.config({
   }
 });
 
-require(['app'],
-function(App) {
+require(['app'], function(App) {
   'use strict';
   App.initialize();
 });
