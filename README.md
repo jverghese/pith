@@ -6,6 +6,7 @@ Boilerplate Jump-Starter Code-base Bootstrap
 #Install
 - fork this repo
 - `git clone <new-github-url>`
+- `sudo npm install -g grunt`
 - `npm install`
 
 #Run

@@ -1,1 +1,1 @@
-put all external client libraries here
+This contains all external client dependencies.

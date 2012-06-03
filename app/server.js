@@ -2,7 +2,7 @@
   'use strict';
 
   var express = require('express'),
-      middleware = require('./lib/middleware'),
+      middleware = require('../lib/middleware'),
       app = module.exports = express.createServer(),
       config = require('./config.js')(app, express),
       routes = require('./routes')(app);
