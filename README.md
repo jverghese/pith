@@ -5,11 +5,11 @@ Boilerplate Jump-Starter Code-base Bootstrap
 
 #Install
 - fork this repo
-- `git clone <new-github-url>`
+- `git clone <your-new-github-url>`
 - `sudo npm install -g grunt`
 - `npm install`
 
-#Run
+#Run Server
 `npm start`
 
 #Build Commands
@@ -19,9 +19,8 @@ Boilerplate Jump-Starter Code-base Bootstrap
 - `grunt compile` RequireJS optimize and compile all client-side JavaScript
 
 #TODO
-- Add grunt for build process
-- Add jshint options
-- Add Jasmine for testing
+- Optimize jshint options
+- Add Jasmine grunt plugin for testing
 - Setup a lesss watcher/auto-compiler (hopefully recess will just work)
 - Add JSDoc parser
 - Add JSDoc comments to all code
