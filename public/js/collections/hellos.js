@@ -22,7 +22,6 @@ function(_, Backbone, Hello){
 
     helperFunction: function () {
       // do public stuff
-      console.log('public helper function');
     }
 
   });
