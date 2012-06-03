@@ -10,12 +10,13 @@ pith = nodjs + express + requirejs + backbone + handlebars + twitter bootstrap +
 - Easy to remove from
 
 #Dependencies
-- nodejs & npm
+- [nodejs](http://nodejs.org)
+- [grunt](http://gruntjs.com)
 
 #Install
 - fork this repo
 - `git clone <your-new-github-url>`
-- `sudo npm install -g grunt`
+- `sudo npm install -g grunt` *(if not already installed)*
 - `npm install`
 
 #Run Server
@@ -35,3 +36,4 @@ pith = nodjs + express + requirejs + backbone + handlebars + twitter bootstrap +
 - Add JSDoc comments to all code
 - Compile handlebars templates in build
 - Possibly add Restify instead/in-addition to Express
+- Travis CI integration
