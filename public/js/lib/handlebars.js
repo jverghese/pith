@@ -4,7 +4,7 @@
  */
 
 define([
-  '../../handlebars/handlebars'
+  '../extern/handlebars/handlebars'
 ],
 function(Handlebars) {
   'use strict';

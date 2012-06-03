@@ -1,25 +1,25 @@
 require.config({
   paths: {
     'templates':            '../templates',
-    'text':                 '../require/text',
-    'jquery':               '../jquery/jquery-1.7.2.min',
-    'backbone':             '../backbone/backbone',
-    'underscoreBase':       '../underscore/underscore',
+    'text':                 '../extern/require/text',
+    'jquery':               '../extern/jquery/jquery-1.7.2.min',
+    'backbone':             '../extern/backbone/backbone',
+    'underscoreBase':       '../extern/underscore/underscore',
     'underscore':           'lib/underscore',
     'handlebars':           'lib/handlebars',
     // Bootstrap plugins
-    'bootstrapAlert':       '../bootstrap/js/bootstrap-alert',
-    'bootstrapButton':      '../bootstrap/js/bootstrap-button',
-    'bootstrapCarousel':    '../bootstrap/js/bootstrap-carousel',
-    'bootstrapCollapse':    '../bootstrap/js/bootstrap-collapse',
-    'bootstrapDropdown':    '../bootstrap/js/bootstrap-dropdown',
-    'bootstrapModal':       '../bootstrap/js/bootstrap-modal',
-    'bootstrapPopover':     '../bootstrap/js/bootstrap-popover',
-    'bootstrapScrollspy':   '../bootstrap/js/bootstrap-scrollspy',
-    'bootstrapTab':         '../bootstrap/js/bootstrap-tab',
-    'bootstrapTooltip':     '../bootstrap/js/bootstrap-tooltip',
-    'bootstrapTransition':  '../bootstrap/js/bootstrap-transition',
-    'bootstrapTypeahead':   '../bootstrap/js/bootstrap-typeahead'
+    'bootstrapAlert':       '../extern/bootstrap/js/bootstrap-alert',
+    'bootstrapButton':      '../extern/bootstrap/js/bootstrap-button',
+    'bootstrapCarousel':    '../extern/bootstrap/js/bootstrap-carousel',
+    'bootstrapCollapse':    '../extern/bootstrap/js/bootstrap-collapse',
+    'bootstrapDropdown':    '../extern/bootstrap/js/bootstrap-dropdown',
+    'bootstrapModal':       '../extern/bootstrap/js/bootstrap-modal',
+    'bootstrapPopover':     '../extern/bootstrap/js/bootstrap-popover',
+    'bootstrapScrollspy':   '../extern/bootstrap/js/bootstrap-scrollspy',
+    'bootstrapTab':         '../extern/bootstrap/js/bootstrap-tab',
+    'bootstrapTooltip':     '../extern/bootstrap/js/bootstrap-tooltip',
+    'bootstrapTransition':  '../extern/bootstrap/js/bootstrap-transition',
+    'bootstrapTypeahead':   '../extern/bootstrap/js/bootstrap-typeahead'
   },
   // Load modules that don't natively support AMD.
   shim: {

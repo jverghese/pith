@@ -13,7 +13,6 @@
       app.use(express.methodOverride());
       //app.use(middleware.rawParser());
       app.use(app.router);
-      app.use(express.static(path.join(__dirname, '..', 'extern')));
       app.use(express.static(path.join(__dirname, '..', 'public')));
     });
 

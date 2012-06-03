@@ -5,7 +5,7 @@
 
 define([
   'underscoreBase',
-  '../../underscore/underscore.string'
+  '../extern/underscore/underscore.string'
 ],
 function(_, _s) {
   'use strict';
