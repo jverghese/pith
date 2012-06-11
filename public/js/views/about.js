@@ -8,7 +8,7 @@ define([
   'underscore',
   'backbone',
   'handlebars',
-  'text!templates/about.handlebars'
+  'templates/about'
 ],
 /**
  * @returns {Backbone.View}
@@ -26,7 +26,7 @@ function($, _, Backbone, Handlebars, aboutTpl) {
     /**
      * @private
      */
-    template: Handlebars.compile(aboutTpl),
+    template: aboutTpl,
 
     /**
      * @private

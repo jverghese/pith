@@ -10,7 +10,7 @@ define([
   'handlebars',
   'models/hello',
   'collections/hellos',
-  'text!templates/home.handlebars',
+  'templates/home',
   // bootstrap plugins must be required, but are just appended to jquery as
   // plugins so the instances need not be referneced.
   'bootstrapAlert'
@@ -32,7 +32,7 @@ function($, _, Backbone, Handlebars,
     /**
      * @private
      */
-    template: Handlebars.compile(homeTpl),
+    template: homeTpl,
 
     /**
      * @private
