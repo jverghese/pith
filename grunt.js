@@ -51,21 +51,6 @@ module.exports = function(grunt) {
         stdout: true
       }
     },
-
-
-    //concat: {
-      //dist: {
-        //src: ['<banner:meta.banner>',
-          //'<file_strip_banner:lib/<%= pkg.name %>.js>'],
-        //dest: 'public/dist/<%= pkg.name %>.js'
-      //}
-    //},
-    //min: {
-      //dist: {
-        //src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        //dest: 'public/dist/<%= pkg.name %>.min.js'
-      //}
-    //},
     //watch: {
       //files: '<config:lint.files>',
       //tasks: 'lint qunit'
