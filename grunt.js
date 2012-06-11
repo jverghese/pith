@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     },
     recess: {
       dist: {
-        src: ['public/less/base.less'],
+        src: ['public/less/*.less'],
         dest: 'public/dist/style.css',
         options: {
           compile: true
@@ -51,10 +51,16 @@ module.exports = function(grunt) {
         stdout: true
       }
     },
-    //watch: {
-      //files: '<config:lint.files>',
-      //tasks: 'lint qunit'
-    //},
+    watch: {
+      less: {
+        files: ['<config:recess.dist.src>'],
+        tasks: 'less'
+      },
+      lint: {
+        files: ['<config:lint.client>', '<config:lint.server>'],
+        tasks: 'lint'
+      }
+    },
     jshint: {
       // Defaults
       options: {
@@ -110,8 +116,8 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('css', 'recess');
+  grunt.registerTask('less', 'recess');
   grunt.registerTask('compile', 'requirejs');
-  grunt.registerTask('default', 'lint css templates compile');
+  grunt.registerTask('default', 'lint less templates compile');
   grunt.registerTask('templates', 'exec:compileTemplates');
 };
