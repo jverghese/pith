@@ -2,11 +2,11 @@ define([
   'backbone',
   'views/nav',
   'views/home',
-  //'views/about',
+  'views/about',
   'models/hello',
   'collections/hellos'
 ],
-function(Backbone, NavView, HomeView, Hello, Hellos) {
+function(Backbone, NavView, HomeView, AboutView, Hello, Hellos) {
   'use strict';
 
   var AppRouter = Backbone.Router.extend({
@@ -14,7 +14,7 @@ function(Backbone, NavView, HomeView, Hello, Hellos) {
     routes: {
       '': 'home',
       'home': 'home',
-      //'about': 'about',
+      'about': 'about',
       // Default
       '*actions': 'defaultAction'
     },
@@ -29,16 +29,16 @@ function(Backbone, NavView, HomeView, Hello, Hellos) {
 
       this.navView = new NavView({ router: this });
       this.homeView = new HomeView({ collection: testCollection });
-      //this.aboutView = new AboutView();
+      this.aboutView = new AboutView();
     },
 
     home: function () {
       this.homeView.render();
     },
 
-    //about: function () {
-      //this.aboutView.render();
-    //},
+    about: function () {
+      this.aboutView.render();
+    },
 
     defaultAction: function (actions) {
       // No route.

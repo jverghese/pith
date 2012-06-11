@@ -10,11 +10,10 @@
     <a class="brand" href="/">MyApp</a>
 
     <div class="nav-collapse">
-      <ul id="main-nav" class="nav">
-
-        <li {{#ifequal active "home"}}class="active"{{/ifequal}}><a href="/home">Home</a></li>
-        <li {{#ifequal active "about"}}class="active"{{/ifequal}}><a href="/about">About</a></li>
-
+      <ul class="nav main-nav">
+      {{#each navItems}}
+        <li {{#ifequal ../active route}}class="active"{{/ifequal}}><a href="/{{route}}">{{display}}</a></li>
+      {{/each}}
       </ul>
     </div>
 
