@@ -1,0 +1,22 @@
+<div class="navbar-inner">
+  <div class="container">
+
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+
+    <a class="brand" href="/">MyApp</a>
+
+    <div class="nav-collapse">
+      <ul id="main-nav" class="nav">
+
+        <li {{#ifequal active "home"}}class="active"{{/ifequal}}><a href="/home">Home</a></li>
+        <li {{#ifequal active "about"}}class="active"{{/ifequal}}><a href="/about">About</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
