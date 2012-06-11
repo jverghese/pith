@@ -34,7 +34,8 @@ module.exports = function(grunt) {
       baseUrl: 'public/js',
       name: 'main',
       mainConfigFile: 'public/js/main.js',
-      out: 'public/dist/main.built.js'
+      out: 'public/dist/main.built.js',
+      preserveLicenseComments: false
     },
     exec: {
       compileTemplates: {
