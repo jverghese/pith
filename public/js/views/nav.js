@@ -1,3 +1,8 @@
+/**
+ * @fileOverview
+ * View that manages and renders the navigation menu.
+ */
+
 define([
   'jquery',
   'underscore',
@@ -7,24 +12,42 @@ define([
   // Needed for small-screen responsive design collapsing menu.
   'bootstrapCollapse'
 ],
+/**
+ * @returns {Backbone.View}
+ */
 function($, _, Backbone, Handlebars, navTpl) {
   'use strict';
 
-  var NavView = Backbone.View.extend({
+  var NavView;
 
-    el: $('#main-navbar'),
+  /**
+   * @constructor
+   */
+  NavView = Backbone.View.extend({
 
+    /**
+     * @private
+     */
     template: Handlebars.compile(navTpl),
 
+    /**
+     * @private
+     */
     events: {
       'click .main-nav': 'onNavClick'
     },
 
-    // Used to optionally auto-build the navigation.
+    /**
+     * Used to optionally auto-build the navigation.
+     * Modify these as necessary.
+     * @private
+     */
     navItems: [
       { route: 'home', display: 'Home' },
       { route: 'about', display: 'About' }
     ],
+
+    el: $('#main-navbar'),
 
     initialize: function () {
       _.bindAll(this, 'render', 'onNavClick', 'onNavigate');
@@ -33,6 +56,11 @@ function($, _, Backbone, Handlebars, navTpl) {
       this.router.on('all', this.onNavigate);
     },
 
+    /**
+     * @public
+     * @param {String} activeLink The path of the navigation link to activate.
+     * @returns {Backbone.View}
+     */
     render: function (activeLink) {
       this.$el.html(this.template({
         active: activeLink,
@@ -42,6 +70,12 @@ function($, _, Backbone, Handlebars, navTpl) {
       return this;
     },
 
+    // EVENT HANDLERS
+
+    /**
+     * @private
+     * @param {Event} e
+     */
     onNavClick: function (e) {
       this.router.navigate(
         this.$(e.target).attr('href'),
@@ -49,6 +83,10 @@ function($, _, Backbone, Handlebars, navTpl) {
       e.preventDefault();
     },
 
+    /**
+     * @private
+     * @param {Event} e
+     */
     onNavigate: function (e) {
       this.render(e.replace('route:', ''));
     }

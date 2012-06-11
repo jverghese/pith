@@ -19,5 +19,4 @@ function(Handlebars) {
   });
 
   return Handlebars;
-
 });

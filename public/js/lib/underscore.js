@@ -10,10 +10,13 @@ define([
 function(_, _s) {
   'use strict';
 
+  /**
+   * Adds underscore string.
+   * @see http://epeli.github.com/underscore.string/
+   */
   _.str = _s;
   _.mixin(_s.exports());
   _.str.include('Underscore.string', 'string');
 
   return _;
-
 });

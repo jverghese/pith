@@ -40,7 +40,6 @@ pith = nodjs + express + requirejs + backbone + handlebars + twitter bootstrap +
 - Optimize jshint options
 - Add Jasmine grunt plugin for testing
 - Add JSDoc parser
-- Add JSDoc comments to all code
 - Compile handlebars templates in build
 - Possibly add Restify instead/in-addition to Express
 - Travis CI integration

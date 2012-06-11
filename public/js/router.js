@@ -1,3 +1,9 @@
+/**
+ * @fileOVerview
+ * The main applicatoin Router.
+ * Defines routes, initializes and renders views.
+ */
+
 define([
   'backbone',
   'views/nav',
@@ -6,10 +12,18 @@ define([
   'models/hello',
   'collections/hellos'
 ],
+/**
+ * @returns {Backbone.Router}
+ */
 function(Backbone, NavView, HomeView, AboutView, Hello, Hellos) {
   'use strict';
 
-  var AppRouter = Backbone.Router.extend({
+  var AppRouter;
+
+  /**
+   * @constructor
+   */
+  AppRouter = Backbone.Router.extend({
 
     routes: {
       '': 'home',
@@ -19,6 +33,10 @@ function(Backbone, NavView, HomeView, AboutView, Hello, Hellos) {
       '*actions': 'defaultAction'
     },
 
+    /**
+     * Initializes all the views used by the app at load time.
+     * @param {Object} options
+     */
     initialize: function (options) {
 
       // TODO: Remove this test data

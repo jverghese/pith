@@ -1,3 +1,10 @@
+/**
+ * @fileOVerview
+ * Bootstraps RequireJS.
+ * Sets up any special configuration for external modules, and initializes
+ * the main application.
+ */
+
 require.config({
   paths: {
     'templates':            '../templates',

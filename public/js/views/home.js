@@ -1,3 +1,8 @@
+/**
+ * @fileOverview
+ * View that manages and renders the Home page.
+ */
+
 define([
   'jquery',
   'underscore',
@@ -6,25 +11,38 @@ define([
   'models/hello',
   'collections/hellos',
   'text!templates/home.handlebars',
-
   // bootstrap plugins must be required, but are just appended to jquery as
   // plugins so the instances need not be referneced.
   'bootstrapAlert'
 ],
+/**
+ * @returns {Backbone.View}
+ */
 function($, _, Backbone, Handlebars,
   Hello, Hellos, homeTpl) {
   'use strict';
 
-  var HomeView = Backbone.View.extend({
+  var HomeView;
 
-    el: $('#main-container'),
+  /**
+   * @constructor
+   */
+  HomeView = Backbone.View.extend({
 
+    /**
+     * @private
+     */
     template: Handlebars.compile(homeTpl),
 
+    /**
+     * @private
+     */
     events: {
       'click .add-new': 'onAddNewClick',
       'click .bootstrap-plugin-test-alert': 'onAlertCloseClick'
     },
+
+    el: $('#main-container'),
 
     initialize: function () {
       // Bind all non-event handler methods to 'this'.
@@ -34,6 +52,10 @@ function($, _, Backbone, Handlebars,
       this.collection.on('reset', this.render);
     },
 
+    /**
+     * @public
+     * @returns {Backbone.View}
+     */
     render: function () {
       this.$el.html(this.template({
         // this should work if underscore.string was setup properly
@@ -47,11 +69,19 @@ function($, _, Backbone, Handlebars,
 
     // EVENT HANDLERS
 
-    onAlertCloseClick: function () {
+    /**
+     * @private
+     * @param {Event} e
+     */
+    onAlertCloseClick: function (e) {
       this.$('.bootstrap-plugin-test-alert').alert('close');
     },
 
-    onAddNewClick: function () {
+    /**
+     * @private
+     * @param {Event} e
+     */
+    onAddNewClick: function (e) {
       this.collection.add(new Hello());
     }
 

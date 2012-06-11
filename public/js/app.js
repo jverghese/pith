@@ -1,3 +1,8 @@
+/**
+ * @fileOverview
+ * The main application entry point.
+ */
+
 define([
   'router'
 ],
