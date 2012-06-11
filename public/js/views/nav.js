@@ -3,7 +3,9 @@ define([
   'underscore',
   'backbone',
   'handlebars',
-  'text!templates/nav.handlebars'
+  'text!templates/nav.handlebars',
+  // Needed for small-screen responsive design collapsing menu.
+  'bootstrapCollapse'
 ],
 function($, _, Backbone, Handlebars, navTpl) {
   'use strict';
