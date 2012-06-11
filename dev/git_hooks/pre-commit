@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Linting
+grunt lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Aborting.."
+  exit 1
+fi
+
+exit 0
