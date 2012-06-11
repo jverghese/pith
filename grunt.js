@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   // Variables
   var handlebarsPath = './node_modules/handlebars/bin/handlebars';
+  var handlebarsCompile = 'grunt/hb_compile.sh';
 
   // Load up npm task plugins
   grunt.loadNpmTasks('grunt-recess');
@@ -49,6 +50,10 @@ module.exports = function(grunt) {
       compileTemplates: {
         command: handlebarsPath +
           ' public/templates --output public/dist/templates.js',
+        stdout: true
+      },
+      compileRJTemplates: {
+        command: handlebarsCompile,
         stdout: true
       }
     },
@@ -119,7 +124,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('less', 'recess:dev');
   grunt.registerTask('compile', 'requirejs');
-  grunt.registerTask('templates', 'exec:compileTemplates');
+  grunt.registerTask('templates', 'exec:compileTemplates exec:compileRJTemplates');
 
   // Does a basic build.
   grunt.registerTask('default', 'lint recess:dev');
