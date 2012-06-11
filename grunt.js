@@ -124,7 +124,8 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('less', 'recess:dev');
   grunt.registerTask('compile', 'requirejs');
-  grunt.registerTask('templates', 'exec:compileTemplates exec:compileRJTemplates');
+  grunt.registerTask('templates',
+      'exec:compileTemplates exec:compileRJTemplates');
 
   // Does a basic build.
   grunt.registerTask('default', 'lint recess:dev');

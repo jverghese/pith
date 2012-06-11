@@ -1,3 +1,5 @@
+#!/bin/bash
+
 inputdir=public/templates
 outputdir=public/templates
 
