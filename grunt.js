@@ -22,11 +22,19 @@ module.exports = function(grunt) {
       client: 'public/js/**/*.js'
     },
     recess: {
-      dist: {
+      dev: {
         src: ['public/less/*.less'],
         dest: 'public/dist/style.css',
         options: {
           compile: true
+        }
+      },
+      prod: {
+        src: ['public/less/*.less'],
+        dest: 'public/dist/style.css',
+        options: {
+          compile: true,
+          compress: true
         }
       }
     },
@@ -46,7 +54,7 @@ module.exports = function(grunt) {
     },
     watch: {
       less: {
-        files: ['<config:recess.dist.src>'],
+        files: ['<config:recess.dev.src>'],
         tasks: 'less'
       },
       lint: {
@@ -109,8 +117,12 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('less', 'recess');
+  grunt.registerTask('less', 'recess:dev');
   grunt.registerTask('compile', 'requirejs');
-  grunt.registerTask('default', 'lint less templates compile');
   grunt.registerTask('templates', 'exec:compileTemplates');
+
+  // Does a basic build.
+  grunt.registerTask('default', 'lint recess:dev');
+  // Does a full production-ready build and compresses and minifies everything.
+  grunt.registerTask('prod', 'lint recess:prod templates compile');
 };
